@@ -16,3 +16,56 @@ function getComputerChoice(){
     }
 }
 
+function getPlayerChoice(){
+    let playerMove = prompt("Enter your move: Rock, Paper, or Scissors")
+    
+    playerMoveLowerCase = playerMove.toLowerCase();
+    nonCapitalLetters = playerMoveLowerCase.slice(1);
+    firstLetterCapital = playerMoveLowerCase[0].toUpperCase();
+    finalPlayerMove = firstLetterCapital+nonCapitalLetters;
+
+    if (finalPlayerMove != 'Rock' || finalPlayerMove != 'Paper' || finalPlayerMove != 'Scissors')
+
+    //add if not rock paper or scissors, please enter valid move
+    //keep prompting until valid
+    return finalPlayerMove;
+}
+
+function playRound(playerSelection, computerSelection){
+    if (playerSelection == computerSelection){
+        console.log("It's a tie!")
+    }
+    else if (playerSelection == 'Rock'){
+        if (computerSelection == 'Scissors'){
+            console.log("You win!")
+        }
+        else{
+            console.log("Computer wins!")
+        }
+    }
+    else if (playerSelection == 'Paper'){
+        if (computerSelection == 'Rock'){
+            console.log("You win!")
+        }
+        else{
+            console.log("Computer wins!")
+        }
+    }
+    else{
+        if (computerSelection == 'Paper'){
+            console.log("You win!")
+        }
+        else{
+            console.log("Computer wins!")
+        }
+    } 
+}
+
+const playerSelection = getPlayerChoice();
+console.log(playerSelection);
+
+const computerSelection = getComputerChoice();
+console.log(computerSelection);
+
+playRound(playerSelection, computerSelection);
+
