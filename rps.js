@@ -37,50 +37,45 @@ function getPlayerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
-    const computerPlayed = document.createElement('p');
-    computerPlayed.textContent = "Computer played " + computerSelection;
-    document.body.appendChild(computerPlayed);
+    const playerPlayed = document.getElementById('playerMove');
+    playerPlayed.textContent = "You played " + playerSelection;
 
-    const result = document.createElement('p');
+    const computerPlayed = document.getElementById('computerMove');
+    computerPlayed.textContent = "Computer played " + computerSelection;
+
+    const result = document.getElementById('result');
 
     if (playerSelection == computerSelection){
         result.textContent = "It's a tie!";
-        document.body.appendChild(result);
         return "Tie";
     }
     else if (playerSelection == 'Rock'){
         if (computerSelection == 'Scissors'){
             result.textContent = "You win!";
-            document.body.appendChild(result);
             return "Player";
         }
         else{
             result.textContent = "Computer wins!";
-            document.body.appendChild(result);
             return "Computer";
         }
     }
     else if (playerSelection == 'Paper'){
         if (computerSelection == 'Rock'){
             result.textContent = "You win!";
-            document.body.appendChild(result);
             return "Player";
         }
         else{
             result.textContent = "Computer wins!";
-            document.body.appendChild(result);
             return "Computer";
         }
     }
     else{
         if (computerSelection == 'Paper'){
             result.textContent = "You win!";
-            document.body.appendChild(result);
             return "Player";
         }
         else{
             result.textContent = "Computer wins!";
-            document.body.appendChild(result);
             return "Computer";
         }
     } 
