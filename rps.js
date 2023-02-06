@@ -37,40 +37,54 @@ function getPlayerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
+    const computerPlayed = document.createElement('p');
+    computerPlayed.textContent = "Computer played " + computerSelection;
+    document.body.appendChild(computerPlayed);
+
+    const result = document.createElement('p');
+
     if (playerSelection == computerSelection){
-        console.log("It's a tie!")
+        result.textContent = "It's a tie!";
+        document.body.appendChild(result);
         return "Tie";
     }
     else if (playerSelection == 'Rock'){
         if (computerSelection == 'Scissors'){
-            console.log("You win!")
+            result.textContent = "You win!";
+            document.body.appendChild(result);
             return "Player";
         }
         else{
-            console.log("Computer wins!")
+            result.textContent = "Computer wins!";
+            document.body.appendChild(result);
             return "Computer";
         }
     }
     else if (playerSelection == 'Paper'){
         if (computerSelection == 'Rock'){
-            console.log("You win!")
+            result.textContent = "You win!";
+            document.body.appendChild(result);
             return "Player";
         }
         else{
-            console.log("Computer wins!")
+            result.textContent = "Computer wins!";
+            document.body.appendChild(result);
             return "Computer";
         }
     }
     else{
         if (computerSelection == 'Paper'){
-            console.log("You win!")
+            result.textContent = "You win!";
+            document.body.appendChild(result);
             return "Player";
         }
         else{
-            console.log("Computer wins!")
+            result.textContent = "Computer wins!";
+            document.body.appendChild(result);
             return "Computer";
         }
     } 
+
 }
 
 function playGame(){
@@ -103,6 +117,11 @@ function playGame(){
     }
 }
 
-playGame();
-
-
+//Using the buttons to choose move and trigger playRound
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click',() => {
+        const playerMove = button.id;
+        playRound(playerMove, getComputerChoice());
+    })
+})
