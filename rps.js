@@ -113,7 +113,7 @@ function playGame(){
 }
 
 //Using the buttons to choose move and trigger playRound
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('input');
 buttons.forEach((button) => {
     button.addEventListener('click',() => {
         const playerMove = button.id;

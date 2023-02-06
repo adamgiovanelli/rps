@@ -1,5 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@700&display=swap');
+
 body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Source Code Pro', monospace;
 }
 
+.header {
+    font-size: 64px;
+    margin-bottom: 64px;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-top: 100px;
+    margin-bottom: 32px;
+}
+
+#Rock, #Paper, #Scissors {
+    height: 250px;
+    width: auto;
+    margin: 0 32px 0 32px;
+}
+
+#Paper {
+    padding-right: calc((343.125px - 178.281px)/2);
+    padding-left: calc((343.125px - 178.281px)/2);
+}
+
+#Scissors {
+    padding-right: calc((343.125px - 261.875px)/2);
+    padding-left: calc((343.125px - 261.875px)/2);
+}
+
+
+
+#playerMove, #computerMove, #result {
+    text-align: center;
+    font-size: 32px;
+}
